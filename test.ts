@@ -1,0 +1,22 @@
+enum QuestionStatus {
+  Published = "published",
+  Draft = "draft",
+  Deleted = "deleted",
+}
+//status?: QuestionStatus опциональность, может быть, может не быть
+async function getFaqs(req: { topicId: number; status?: QuestionStatus }): Promise<
+  {
+    question: string;
+    answer: string;
+    tags: string[];
+    likes: number;
+    status: QuestionStatus;
+  }[]
+> {
+  const res = await fetch("/faqs", {
+    method: "POST",
+    body: JSON.stringify(req),
+  });
+  const data = await res.json();
+  return data;
+}
