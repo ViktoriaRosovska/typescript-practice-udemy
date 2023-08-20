@@ -132,3 +132,23 @@ fetchWithAuth("s", "post");
 let method = "post";
 method = "3";
 fetchWithAuth("s", method); //кастомизация типов, приведение к нужному типу
+function fetchWithAuthFunc(url, method) {
+    console.log(method);
+}
+let firstUser = {
+    name: "Ivan",
+    age: 33,
+    skills: ["1", "2"],
+};
+let secondUser = {
+    name: "Ivan",
+    age: 33,
+    skills: ["1", "2"],
+    id: 1,
+};
+let thirdUser = {
+    name: "Dima",
+    age: 36,
+    skills: ["1", "2"],
+    id: 2,
+};
